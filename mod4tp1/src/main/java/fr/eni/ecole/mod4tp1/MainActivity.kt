@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -63,7 +64,7 @@ fun Dice(
     Column(
         modifier = Modifier
             .padding(12.dp)
-            .fillMaxHeight(),
+            .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -105,19 +106,20 @@ fun Dice(
                 onClick = { viewModel.rollDiceFP() },
                 modifier = Modifier.padding(12.dp),
                 shape = CircleShape) {
-                Text(text = "Gauche")
+                Text(text = "GAUCHE")
             }
             Button(
                 onClick = { viewModel.rollDiceSP() },
                 modifier = Modifier
                     .padding(12.dp),
                 shape = CircleShape,
+                border = BorderStroke(2.dp, Color.Blue),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White, // Fond blanc
                     contentColor = Color.Blue    // Texte bleu
                 )) {
                 Text(
-                    text = "Droite"
+                    text = "DROITE"
                     )
             }
         }
